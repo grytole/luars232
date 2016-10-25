@@ -38,7 +38,7 @@ OBJ = $(SRC:.c=.o)
 	$(CC) -g -O2 -DWIN32 -DRS232_EXPORT -I. -c $< -o $@
 
 all: $(OBJ)
-	$(CC) -shared -o luars232.dll $^ -fPIC -L$(LUALIB) -llua51
+	$(CC) -shared -s -o luars232.dll $^ -fPIC -L$(LUALIB) -llua51
 
 clean:
 ifeq ($(OS),Windows_NT)
